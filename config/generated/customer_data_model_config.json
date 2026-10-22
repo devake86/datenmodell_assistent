@@ -1,0 +1,127 @@
+{
+  "source": {
+    "file": "data\\customer_data.csv",
+    "delimiter": ";",
+    "encoding": "utf-8"
+  },
+  "database": {
+    "dialect": "mysql",
+    "default_primary_key": {
+      "name": "id",
+      "data_type": "INT",
+      "auto_increment": true
+    }
+  },
+  "tables": [
+    {
+      "name": "kunde",
+      "table_type": "entity",
+      "attributes": [
+        {
+          "source_column": "Kundennummer",
+          "target_name": "kundennummer",
+          "key_candidate": true,
+          "assignment_status": "recognized"
+        },
+        {
+          "source_column": "Firmenname",
+          "target_name": "firmenname",
+          "key_candidate": false,
+          "assignment_status": "recognized"
+        },
+        {
+          "source_column": "Kundentyp",
+          "target_name": "kundentyp",
+          "key_candidate": false,
+          "assignment_status": "recognized"
+        },
+        {
+          "source_column": "Umsatz",
+          "target_name": "umsatz",
+          "key_candidate": false,
+          "assignment_status": "recognized"
+        },
+        {
+          "source_column": "Vertragsbeginn",
+          "target_name": "vertragsbeginn",
+          "key_candidate": false,
+          "assignment_status": "recognized"
+        },
+        {
+          "source_column": "Aktiv",
+          "target_name": "aktiv",
+          "key_candidate": false,
+          "assignment_status": "recognized"
+        }
+      ]
+    },
+    {
+      "name": "ansprechpartner",
+      "table_type": "entity",
+      "attributes": [
+        {
+          "source_column": "Ansprechpartner",
+          "target_name": "name",
+          "key_candidate": false,
+          "assignment_status": "recognized"
+        },
+        {
+          "source_column": "E-Mail",
+          "target_name": "email",
+          "key_candidate": true,
+          "assignment_status": "recognized"
+        },
+        {
+          "source_column": "Telefon",
+          "target_name": "telefon",
+          "key_candidate": false,
+          "assignment_status": "recognized"
+        }
+      ]
+    },
+    {
+      "name": "adresse",
+      "table_type": "entity",
+      "attributes": [
+        {
+          "source_column": "Straße",
+          "target_name": "strasse",
+          "key_candidate": false,
+          "assignment_status": "recognized"
+        },
+        {
+          "source_column": "Hausnummer",
+          "target_name": "hausnummer",
+          "key_candidate": false,
+          "assignment_status": "recognized"
+        },
+        {
+          "source_column": "PLZ",
+          "target_name": "plz",
+          "key_candidate": false,
+          "assignment_status": "recognized"
+        },
+        {
+          "source_column": "Ort",
+          "target_name": "ort",
+          "key_candidate": false,
+          "assignment_status": "recognized"
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "parent_table": "kunde",
+      "child_table": "ansprechpartner",
+      "foreign_key": "kunde_id",
+      "cardinality": "1:n"
+    },
+    {
+      "parent_table": "kunde",
+      "child_table": "adresse",
+      "foreign_key": "kunde_id",
+      "cardinality": "1:n"
+    }
+  ]
+}

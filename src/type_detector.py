@@ -1,10 +1,11 @@
 from datetime import datetime
 from decimal import Decimal, InvalidOperation
+from src.column_name_normalizer import normalize_column_name
 
 def is_missing_information(column_value):
     """
-    Prüfung auf fehlende oder unbekannte
-    Information eines Werts
+    Prüfung eines Werts auf eine fehlende
+    oder unbekannte Information
     """
 
     if column_value is None:
@@ -63,13 +64,14 @@ def suggest_sql_data_type(column_name, column_values):
 
 def requires_text_data_type(column_name):
     """
-    Prüfung auf Grund von bestimmten Spaltennamen
+    Anhand bestimmter Spaltennamen prüfen,
     ob Werte als Zeichenketten behandelt werden sollen
     """
 
-    normalized_column_name = column_name.lower()
+    # Spaltennamen für den Vergleich vereinheitlichen
+    normalized_column_name = normalize_column_name(column_name)
 
-    # Keyword Liste
+    # Keyword Listen
     text_column_keywords = [
         'nummer',
         'telefon',
@@ -77,9 +79,27 @@ def requires_text_data_type(column_name):
         'postleitzahl'
     ]
 
+    text_column_names = [
+        'hausnr',
+        'kundennr',
+        'lieferantennr',
+        'personalnr',
+        'mitarbeiternr',
+        'abteilungsnr',
+        'artikelnr',
+        'produktnr',
+        'auftragsnr',
+        'rechnungsnr',
+        'vertragsnr',
+        'tel'
+    ]
+
     for text_column_keyword in text_column_keywords:
         if text_column_keyword in normalized_column_name:
             return True
+
+    if normalized_column_name in text_column_names:
+        return True
 
     return False
 
@@ -120,7 +140,7 @@ def contains_only_integer_values(column_values):
 
 def contains_only_decimal_values(column_values):
     """
-     Prüfung auf Dezimalzahlen
+    Prüfung auf Dezimalzahlen
     """
 
     for column_value in column_values:
@@ -148,8 +168,8 @@ def contains_only_date_values(column_values):
 
 def suggest_varchar_or_text_data_type(column_values):
     """
-    Je nach Länge des Werts eine bestimmte VARCHAR-Länge bis 255
-    oder TEXT Datentyp wenn über 255 vorschlagen
+    Je nach Länge des Werts eine passende VARCHAR-Länge bis 255
+    oder den Datentyp TEXT bei mehr als 255 Zeichen vorschlagen
     """
 
     maximum_length = 0
@@ -177,12 +197,17 @@ def suggest_varchar_or_text_data_type(column_values):
 
     return 'TEXT'
 
-# Datentyp Check Tests
-# if __name__ == '__main__':
-#     print(suggest_sql_data_type('Anzahl', ['10', '20', '30']))
-#     print(suggest_sql_data_type('Preis', ['10.50', '20.25']))
-#     print(suggest_sql_data_type('Datum', ['2025-01-01', '2025-02-01']))
-#     print(suggest_sql_data_type('Aktiv', ['Ja', 'Nein', '1']))
-#     print(suggest_sql_data_type('PLZ', ['01234', '76669']))
-#     print(suggest_sql_data_type('Umsatz', ['12500.50', '8400.00', 'unbekannt']))
-#     print(suggest_sql_data_type('Vertragsbeginn', ['2024-02-15', '2025-01-10', 'nicht bekannt']))
+# Tests für die Datentyperkennung
+if __name__ == '__main__':
+    print(suggest_sql_data_type('Anzahl', ['10', '20', '30']))
+    print(suggest_sql_data_type('Preis', ['10.50', '20.25']))
+    print(suggest_sql_data_type('Datum', ['2025-01-01', '2025-02-01']))
+    print(suggest_sql_data_type('Aktiv', ['Ja', 'Nein', '1']))
+    print(suggest_sql_data_type('PLZ', ['01234', '76669']))
+    print(suggest_sql_data_type('Umsatz', ['12500.50', '8400.00', 'unbekannt']))
+    print(suggest_sql_data_type('Vertragsbeginn', ['2024-02-15', '2025-01-10', 'nicht bekannt']))
+    print(suggest_sql_data_type('Haus-Nr.', ['12', '8', '23']))
+    print(suggest_sql_data_type('Personal-Nr.', ['0012', '0048']))
+    print(suggest_sql_data_type('Artikel-Nr.', ['1001', '1002']))
+    print(suggest_sql_data_type('Tel.', ['07251', '0171']))
+

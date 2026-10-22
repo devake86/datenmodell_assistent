@@ -1,0 +1,83 @@
+================================================================================
+DATENANALYSEBERICHT
+================================================================================
+
+Quelldatei: data\product_data.csv
+Anzahl Datensätze: 2
+Anzahl Spalten: 4
+
+ZUSAMMENFASSUNG
+================================================================================
+Möglicherweise nicht atomare Werte: 0
+Fehlende oder unbekannte Angaben: 0
+Nicht zugeordnete Spalten: 0
+Mögliche n:m-Beziehungen: 0
+Datenmodellwarnungen: 0
+
+DETAILANALYSE DER SPALTEN
+================================================================================
+
+Attribut: Artikelnummer
+--------------------------------------------------------------------------------
+Datensätze: 2
+Gefüllte Werte: 2
+Leere Werte: 0
+Eindeutige Werte: 2
+Wiederholte Einträge: 0
+Maximale Zeichenlänge: 6
+Vorgeschlagener SQL-Datentyp: VARCHAR(10)
+
+Attribut: Produktbezeichnung
+--------------------------------------------------------------------------------
+Datensätze: 2
+Gefüllte Werte: 2
+Leere Werte: 0
+Eindeutige Werte: 2
+Wiederholte Einträge: 0
+Maximale Zeichenlänge: 15
+Vorgeschlagener SQL-Datentyp: VARCHAR(20)
+
+Attribut: Preis
+--------------------------------------------------------------------------------
+Datensätze: 2
+Gefüllte Werte: 2
+Leere Werte: 0
+Eindeutige Werte: 2
+Wiederholte Einträge: 0
+Maximale Zeichenlänge: 5
+Vorgeschlagener SQL-Datentyp: DECIMAL(10,2)
+
+Attribut: Bestand
+--------------------------------------------------------------------------------
+Datensätze: 2
+Gefüllte Werte: 2
+Leere Werte: 0
+Eindeutige Werte: 2
+Wiederholte Einträge: 0
+Maximale Zeichenlänge: 2
+Vorgeschlagener SQL-Datentyp: INT
+
+MÖGLICHERWEISE NICHT ATOMARE WERTE
+================================================================================
+Keine Auffälligkeiten gefunden.
+
+FEHLENDE ODER UNBEKANNTE INFORMATIONEN
+================================================================================
+Keine Auffälligkeiten gefunden.
+
+NICHT ZUGEORDNETE SPALTEN
+================================================================================
+Alle Spalten konnten regelbasiert zugeordnet werden.
+
+MÖGLICHE N:M-BEZIEHUNGEN
+================================================================================
+Keine möglichen n:m-Beziehungen gefunden.
+
+WARNUNGEN ZUM DATENMODELL
+================================================================================
+Keine Unstimmigkeiten zwischen Quelldaten und Datenmodellkonfiguration gefunden.
+
+ABSCHLIESSENDER HINWEIS
+================================================================================
+Alle automatisch erzeugten Zuordnungen, Beziehungen, Datentypen
+und Warnungen müssen vor einer Datenbankübernahme geprüft werden.

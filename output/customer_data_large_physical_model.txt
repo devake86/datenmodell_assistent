@@ -1,0 +1,104 @@
+================================================================================
+VORSCHLAG FÜR EIN PHYSISCHES DATENMODELL
+================================================================================
+
+Der Datenmodellvorschlag wurde automatisch aus der Datenanalyse
+und der regelbasiert erzeugten Datenmodellkonfiguration erstellt.
+
+Tabellen, Attribute, Schlüssel, Beziehungen und Datentypen
+müssen vor einer praktischen Umsetzung geprüft werden.
+
+SQL-Dialekt: mysql
+
+TABELLENÜBERSICHT
+================================================================================
+
+TABELLE: kunde
+--------------------------------------------------------------------------------
+Attribut              Schlüssel   Datentyp          Eigenschaft / Beziehung
+--------------------------------------------------------------------------------
+id                    PK          INT               AUTO_INCREMENT
+kundennummer          AK?         VARCHAR(10)       -
+firmenname                        VARCHAR(50)       -
+kundentyp                         VARCHAR(20)       -
+umsatz                            DECIMAL(10,2)     -
+vertragsbeginn                    DATE              -
+aktiv                             BOOLEAN           -
+
+TABELLE: ansprechpartner
+--------------------------------------------------------------------------------
+Attribut              Schlüssel   Datentyp          Eigenschaft / Beziehung
+--------------------------------------------------------------------------------
+id                    PK          INT               AUTO_INCREMENT
+name                              VARCHAR(20)       -
+email                 AK?         VARCHAR(50)       -
+telefon                           VARCHAR(50)       -
+kunde_id              FK          INT               -> kunde.id
+
+TABELLE: adresse
+--------------------------------------------------------------------------------
+Attribut              Schlüssel   Datentyp          Eigenschaft / Beziehung
+--------------------------------------------------------------------------------
+id                    PK          INT               AUTO_INCREMENT
+strasse                           VARCHAR(20)       -
+hausnummer                        VARCHAR(10)       -
+plz                               VARCHAR(10)       -
+ort                               VARCHAR(50)       -
+land                              VARCHAR(20)       -
+kunde_id              FK          INT               -> kunde.id
+
+TABELLE: auftrag
+--------------------------------------------------------------------------------
+Attribut              Schlüssel   Datentyp          Eigenschaft / Beziehung
+--------------------------------------------------------------------------------
+id                    PK          INT               AUTO_INCREMENT
+auftragsnummer        AK?         VARCHAR(10)       -
+auftragsdatum                     DATE              -
+gesamtbetrag                      DECIMAL(10,2)     -
+kunde_id              FK          INT               -> kunde.id
+
+TABELLE: rechnung
+--------------------------------------------------------------------------------
+Attribut              Schlüssel   Datentyp          Eigenschaft / Beziehung
+--------------------------------------------------------------------------------
+id                    PK          INT               AUTO_INCREMENT
+rechnungsnummer       AK?         VARCHAR(10)       -
+rechnungsdatum                    DATE              -
+rechnungsbetrag                   DECIMAL(10,2)     -
+kunde_id              FK          INT               -> kunde.id
+auftrag_id            FK          INT               -> auftrag.id
+
+TABELLE: vertrag
+--------------------------------------------------------------------------------
+Attribut              Schlüssel   Datentyp          Eigenschaft / Beziehung
+--------------------------------------------------------------------------------
+id                    PK          INT               AUTO_INCREMENT
+vertragsnummer        AK?         VARCHAR(10)       -
+beginn                            DATE              -
+ende                              DATE              -
+kunde_id              FK          INT               -> kunde.id
+
+TABELLE: nicht_zugeordnet
+--------------------------------------------------------------------------------
+Attribut              Schlüssel   Datentyp          Eigenschaft / Beziehung
+--------------------------------------------------------------------------------
+kategorien                        VARCHAR(50)       -
+branchen                          VARCHAR(100)      -
+rollen                            VARCHAR(50)       -
+betreuungsstatus                  VARCHAR(10)       -
+internenotiz                      VARCHAR(100)      -
+
+BEZIEHUNGEN
+================================================================================
+kunde.id 1 <---- n ansprechpartner.kunde_id
+kunde.id 1 <---- n adresse.kunde_id
+kunde.id 1 <---- n auftrag.kunde_id
+kunde.id 1 <---- n rechnung.kunde_id
+kunde.id 1 <---- n vertrag.kunde_id
+auftrag.id 1 <---- n rechnung.auftrag_id
+
+LEGENDE
+================================================================================
+PK  = Primärschlüssel
+FK  = Fremdschlüssel
+AK? = möglicher Alternativschlüssel, manuell prüfen

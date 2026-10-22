@@ -1,0 +1,48 @@
+{
+  "source": {
+    "file": "data\\product_data.csv",
+    "delimiter": ";",
+    "encoding": "utf-8"
+  },
+  "database": {
+    "dialect": "mysql",
+    "default_primary_key": {
+      "name": "id",
+      "data_type": "INT",
+      "auto_increment": true
+    }
+  },
+  "tables": [
+    {
+      "name": "produkt",
+      "table_type": "entity",
+      "attributes": [
+        {
+          "source_column": "Artikelnummer",
+          "target_name": "artikelnummer",
+          "key_candidate": true,
+          "assignment_status": "recognized"
+        },
+        {
+          "source_column": "Produktbezeichnung",
+          "target_name": "bezeichnung",
+          "key_candidate": false,
+          "assignment_status": "recognized"
+        },
+        {
+          "source_column": "Preis",
+          "target_name": "preis",
+          "key_candidate": false,
+          "assignment_status": "recognized"
+        },
+        {
+          "source_column": "Bestand",
+          "target_name": "bestand",
+          "key_candidate": false,
+          "assignment_status": "recognized"
+        }
+      ]
+    }
+  ],
+  "relationships": []
+}

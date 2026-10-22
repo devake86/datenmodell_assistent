@@ -1,0 +1,252 @@
+================================================================================
+DATENANALYSEBERICHT
+================================================================================
+
+Quelldatei: data\customer_data_alternative_headers.csv
+Anzahl Datensätze: 15
+Anzahl Spalten: 15
+
+ZUSAMMENFASSUNG
+================================================================================
+Möglicherweise nicht atomare Werte: 1
+Fehlende oder unbekannte Angaben: 4
+Nicht zugeordnete Spalten: 2
+Mögliche n:m-Beziehungen: 1
+Datenmodellwarnungen: 0
+
+DETAILANALYSE DER SPALTEN
+================================================================================
+
+Attribut: Kunden-Nr.
+--------------------------------------------------------------------------------
+Datensätze: 15
+Gefüllte Werte: 14
+Leere Werte: 1
+Eindeutige Werte: 13
+Wiederholte Einträge: 1
+Maximale Zeichenlänge: 6
+Vorgeschlagener SQL-Datentyp: VARCHAR(10)
+
+Attribut: Firma
+--------------------------------------------------------------------------------
+Datensätze: 15
+Gefüllte Werte: 15
+Leere Werte: 0
+Eindeutige Werte: 15
+Wiederholte Einträge: 0
+Maximale Zeichenlänge: 28
+Vorgeschlagener SQL-Datentyp: VARCHAR(50)
+
+Attribut: Kunden-Typ
+--------------------------------------------------------------------------------
+Datensätze: 15
+Gefüllte Werte: 15
+Leere Werte: 0
+Eindeutige Werte: 3
+Wiederholte Einträge: 12
+Maximale Zeichenlänge: 19
+Vorgeschlagener SQL-Datentyp: VARCHAR(20)
+
+Attribut: Kontaktperson
+--------------------------------------------------------------------------------
+Datensätze: 15
+Gefüllte Werte: 15
+Leere Werte: 0
+Eindeutige Werte: 14
+Wiederholte Einträge: 1
+Maximale Zeichenlänge: 15
+Vorgeschlagener SQL-Datentyp: VARCHAR(20)
+
+Attribut: E Mail
+--------------------------------------------------------------------------------
+Datensätze: 15
+Gefüllte Werte: 14
+Leere Werte: 1
+Eindeutige Werte: 13
+Wiederholte Einträge: 1
+Maximale Zeichenlänge: 27
+Vorgeschlagener SQL-Datentyp: VARCHAR(50)
+
+Attribut: Tel.
+--------------------------------------------------------------------------------
+Datensätze: 15
+Gefüllte Werte: 15
+Leere Werte: 0
+Eindeutige Werte: 14
+Wiederholte Einträge: 1
+Maximale Zeichenlänge: 26
+Vorgeschlagener SQL-Datentyp: VARCHAR(50)
+
+Attribut: Strasse
+--------------------------------------------------------------------------------
+Datensätze: 15
+Gefüllte Werte: 15
+Leere Werte: 0
+Eindeutige Werte: 14
+Wiederholte Einträge: 1
+Maximale Zeichenlänge: 15
+Vorgeschlagener SQL-Datentyp: VARCHAR(20)
+
+Attribut: Haus-Nr.
+--------------------------------------------------------------------------------
+Datensätze: 15
+Gefüllte Werte: 15
+Leere Werte: 0
+Eindeutige Werte: 14
+Wiederholte Einträge: 1
+Maximale Zeichenlänge: 2
+Vorgeschlagener SQL-Datentyp: VARCHAR(10)
+
+Attribut: Postleitzahl
+--------------------------------------------------------------------------------
+Datensätze: 15
+Gefüllte Werte: 15
+Leere Werte: 0
+Eindeutige Werte: 13
+Wiederholte Einträge: 2
+Maximale Zeichenlänge: 5
+Vorgeschlagener SQL-Datentyp: VARCHAR(10)
+
+Attribut: Stadt
+--------------------------------------------------------------------------------
+Datensätze: 15
+Gefüllte Werte: 15
+Leere Werte: 0
+Eindeutige Werte: 13
+Wiederholte Einträge: 2
+Maximale Zeichenlänge: 14
+Vorgeschlagener SQL-Datentyp: VARCHAR(20)
+
+Attribut: Jahresumsatz
+--------------------------------------------------------------------------------
+Datensätze: 15
+Gefüllte Werte: 15
+Leere Werte: 0
+Eindeutige Werte: 14
+Wiederholte Einträge: 1
+Maximale Zeichenlänge: 9
+Vorgeschlagener SQL-Datentyp: DECIMAL(10,2)
+
+Attribut: Vertrags-Start
+--------------------------------------------------------------------------------
+Datensätze: 15
+Gefüllte Werte: 15
+Leere Werte: 0
+Eindeutige Werte: 14
+Wiederholte Einträge: 1
+Maximale Zeichenlänge: 13
+Vorgeschlagener SQL-Datentyp: DATE
+
+Attribut: Ist Aktiv
+--------------------------------------------------------------------------------
+Datensätze: 15
+Gefüllte Werte: 15
+Leere Werte: 0
+Eindeutige Werte: 3
+Wiederholte Einträge: 12
+Maximale Zeichenlänge: 4
+Vorgeschlagener SQL-Datentyp: BOOLEAN
+
+Attribut: Betreuungsstatus
+--------------------------------------------------------------------------------
+Datensätze: 15
+Gefüllte Werte: 15
+Leere Werte: 0
+Eindeutige Werte: 1
+Wiederholte Einträge: 14
+Maximale Zeichenlänge: 8
+Vorgeschlagener SQL-Datentyp: VARCHAR(10)
+
+Attribut: Kategorien
+--------------------------------------------------------------------------------
+Datensätze: 15
+Gefüllte Werte: 15
+Leere Werte: 0
+Eindeutige Werte: 5
+Wiederholte Einträge: 10
+Maximale Zeichenlänge: 25
+Vorgeschlagener SQL-Datentyp: VARCHAR(50)
+
+MÖGLICHERWEISE NICHT ATOMARE WERTE
+================================================================================
+
+WARNUNG: Möglicher nicht atomarer Wert
+--------------------------------------------------------------------------------
+Spalte: Tel.
+CSV-Zeile: 13
+Wert: 07251 100012 / 0171 100012
+Erkanntes Trennzeichen: Schrägstrich
+Empfehlung: Auf Möglichkeit mehrerer Einzelwerte prüfen
+
+FEHLENDE ODER UNBEKANNTE INFORMATIONEN
+================================================================================
+
+WARNUNG: Fehlende oder unbekannte Information
+--------------------------------------------------------------------------------
+Spalte: E Mail
+CSV-Zeile: 12
+Wert: [LEER]
+Empfehlung: Wert vor dem Datenbankimport prüfen und gegebenenfalls durch NULL ersetzen
+
+WARNUNG: Fehlende oder unbekannte Information
+--------------------------------------------------------------------------------
+Spalte: Jahresumsatz
+CSV-Zeile: 13
+Wert: unbekannt
+Empfehlung: Wert vor dem Datenbankimport prüfen und gegebenenfalls durch NULL ersetzen
+
+WARNUNG: Fehlende oder unbekannte Information
+--------------------------------------------------------------------------------
+Spalte: Kunden-Nr.
+CSV-Zeile: 15
+Wert: [LEER]
+Empfehlung: Wert vor dem Datenbankimport prüfen und gegebenenfalls durch NULL ersetzen
+
+WARNUNG: Fehlende oder unbekannte Information
+--------------------------------------------------------------------------------
+Spalte: Vertrags-Start
+CSV-Zeile: 16
+Wert: nicht bekannt
+Empfehlung: Wert vor dem Datenbankimport prüfen und gegebenenfalls durch NULL ersetzen
+
+NICHT ZUGEORDNETE SPALTEN
+================================================================================
+
+WARNUNG: Keine bekannte Attributregel gefunden
+--------------------------------------------------------------------------------
+Quellspalte: Betreuungsstatus
+Normalisierter Name: betreuungsstatus
+Vorläufige Tabelle: nicht_zugeordnet
+Empfehlung: Prüfen und das Regelwerk bei Bedarf erweitern.
+
+WARNUNG: Keine bekannte Attributregel gefunden
+--------------------------------------------------------------------------------
+Quellspalte: Kategorien
+Normalisierter Name: kategorien
+Vorläufige Tabelle: nicht_zugeordnet
+Empfehlung: Prüfen und das Regelwerk bei Bedarf erweitern.
+
+MÖGLICHE N:M-BEZIEHUNGEN
+================================================================================
+
+WARNUNG: Mögliche n:m-Beziehung erkannt
+--------------------------------------------------------------------------------
+Quellspalte: Kategorien
+CSV-Zeile: 3
+Wert: Großkunde / Bestandskunde
+Erkanntes Trennzeichen: Schrägstrich
+Mögliche Ausgangstabelle: kunde
+Mögliche Zieltabelle: kategorie
+Mögliche Verbindungstabelle: kunde_kategorie
+Empfehlung: Möglichkeit einer n:m-Beziehung und Verbindungstabelle manuell überprüfen.
+Hinweis: Die mögliche Beziehung wurde nicht
+automatisch in den Datenmodellvorschlag übernommen.
+
+WARNUNGEN ZUM DATENMODELL
+================================================================================
+Keine Unstimmigkeiten zwischen Quelldaten und Datenmodellkonfiguration gefunden.
+
+ABSCHLIESSENDER HINWEIS
+================================================================================
+Alle automatisch erzeugten Zuordnungen, Beziehungen, Datentypen
+und Warnungen müssen vor einer Datenbankübernahme geprüft werden.

@@ -3,8 +3,8 @@ from src.type_detector import suggest_sql_data_type
 def analyze_columns(data_records, column_names):
     """
     Werte aller CSV-Spalten analysieren
-    Für jede Spalte Anzahl gefüllter, leerer, eindeutiger,
-    mehrfach vorkommender Werte und maximale Zeichenlänge ermitteln
+    Für jede Spalte die Anzahl gefüllter, leerer, eindeutiger
+    und mehrfach vorkommender Werte sowie die maximale Zeichenlänge ermitteln
     Ergebnisse als Liste von Dictionaries zurückgeben
     """
 
@@ -28,7 +28,7 @@ def analyze_columns(data_records, column_names):
 
 def analyze_column_values(column_name, column_values):
     """
-    Werte einzelner CSV-Spalten analysieren
+    Werte einer einzelnen CSV-Spalte analysieren
     Leere Werte bei der Bestimmung eindeutiger und
     mehrfach vorkommender Werte nicht berücksichtigen
     """
@@ -55,7 +55,7 @@ def analyze_column_values(column_name, column_values):
 
     filled_value_count = len(filled_values)
 
-    # Set um Werte einmalig zu machen
+    # Set erstellen, um jeden gefüllten Wert nur einmal zu berücksichtigen
     unique_values = set(filled_values)
     unique_value_count = len(unique_values)
 
@@ -65,7 +65,7 @@ def analyze_column_values(column_name, column_values):
     # SQL-Datentyp vorschlagen
     suggested_sql_data_type = suggest_sql_data_type(column_name, column_values)
 
-    # Einzelspaltenanalyse Dictionary befüllen
+    # Dictionary mit den Ergebnissen der Einzelspaltenanalyse befüllen
     column_analysis = {
         'column_name': column_name,
         'record_count': record_count,
@@ -78,3 +78,15 @@ def analyze_column_values(column_name, column_values):
     }
 
     return column_analysis
+
+# Tests für die Einzelspaltenanalyse
+if __name__ == '__main__':
+    test_values = [
+        'K-0001',
+        'K-0002',
+        'K-0002',
+        '',
+        '   '
+    ]
+
+    print(analyze_column_values('Kundennummer', test_values))

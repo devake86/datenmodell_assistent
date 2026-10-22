@@ -1,0 +1,868 @@
+================================================================================
+DATENANALYSEBERICHT
+================================================================================
+
+Quelldatei: data\customer_data_large.csv
+Anzahl Datensätze: 32
+Anzahl Spalten: 28
+
+ZUSAMMENFASSUNG
+================================================================================
+Möglicherweise nicht atomare Werte: 3
+Fehlende oder unbekannte Angaben: 5
+Nicht zugeordnete Spalten: 5
+Mögliche n:m-Beziehungen: 35
+Datenmodellwarnungen: 0
+
+DETAILANALYSE DER SPALTEN
+================================================================================
+
+Attribut: Kunden-Nr.
+--------------------------------------------------------------------------------
+Datensätze: 32
+Gefüllte Werte: 31
+Leere Werte: 1
+Eindeutige Werte: 30
+Wiederholte Einträge: 1
+Maximale Zeichenlänge: 6
+Vorgeschlagener SQL-Datentyp: VARCHAR(10)
+
+Attribut: Firma
+--------------------------------------------------------------------------------
+Datensätze: 32
+Gefüllte Werte: 32
+Leere Werte: 0
+Eindeutige Werte: 32
+Wiederholte Einträge: 0
+Maximale Zeichenlänge: 28
+Vorgeschlagener SQL-Datentyp: VARCHAR(50)
+
+Attribut: Kunden-Typ
+--------------------------------------------------------------------------------
+Datensätze: 32
+Gefüllte Werte: 32
+Leere Werte: 0
+Eindeutige Werte: 3
+Wiederholte Einträge: 29
+Maximale Zeichenlänge: 19
+Vorgeschlagener SQL-Datentyp: VARCHAR(20)
+
+Attribut: Kontaktperson
+--------------------------------------------------------------------------------
+Datensätze: 32
+Gefüllte Werte: 32
+Leere Werte: 0
+Eindeutige Werte: 31
+Wiederholte Einträge: 1
+Maximale Zeichenlänge: 15
+Vorgeschlagener SQL-Datentyp: VARCHAR(20)
+
+Attribut: E Mail
+--------------------------------------------------------------------------------
+Datensätze: 32
+Gefüllte Werte: 31
+Leere Werte: 1
+Eindeutige Werte: 30
+Wiederholte Einträge: 1
+Maximale Zeichenlänge: 42
+Vorgeschlagener SQL-Datentyp: VARCHAR(50)
+
+Attribut: Tel.
+--------------------------------------------------------------------------------
+Datensätze: 32
+Gefüllte Werte: 32
+Leere Werte: 0
+Eindeutige Werte: 31
+Wiederholte Einträge: 1
+Maximale Zeichenlänge: 26
+Vorgeschlagener SQL-Datentyp: VARCHAR(50)
+
+Attribut: Strasse
+--------------------------------------------------------------------------------
+Datensätze: 32
+Gefüllte Werte: 32
+Leere Werte: 0
+Eindeutige Werte: 31
+Wiederholte Einträge: 1
+Maximale Zeichenlänge: 15
+Vorgeschlagener SQL-Datentyp: VARCHAR(20)
+
+Attribut: Haus-Nr.
+--------------------------------------------------------------------------------
+Datensätze: 32
+Gefüllte Werte: 32
+Leere Werte: 0
+Eindeutige Werte: 30
+Wiederholte Einträge: 2
+Maximale Zeichenlänge: 5
+Vorgeschlagener SQL-Datentyp: VARCHAR(10)
+
+Attribut: Postleitzahl
+--------------------------------------------------------------------------------
+Datensätze: 32
+Gefüllte Werte: 32
+Leere Werte: 0
+Eindeutige Werte: 30
+Wiederholte Einträge: 2
+Maximale Zeichenlänge: 5
+Vorgeschlagener SQL-Datentyp: VARCHAR(10)
+
+Attribut: Stadt
+--------------------------------------------------------------------------------
+Datensätze: 32
+Gefüllte Werte: 32
+Leere Werte: 0
+Eindeutige Werte: 21
+Wiederholte Einträge: 11
+Maximale Zeichenlänge: 22
+Vorgeschlagener SQL-Datentyp: VARCHAR(50)
+
+Attribut: Land
+--------------------------------------------------------------------------------
+Datensätze: 32
+Gefüllte Werte: 32
+Leere Werte: 0
+Eindeutige Werte: 1
+Wiederholte Einträge: 31
+Maximale Zeichenlänge: 11
+Vorgeschlagener SQL-Datentyp: VARCHAR(20)
+
+Attribut: Jahresumsatz
+--------------------------------------------------------------------------------
+Datensätze: 32
+Gefüllte Werte: 32
+Leere Werte: 0
+Eindeutige Werte: 31
+Wiederholte Einträge: 1
+Maximale Zeichenlänge: 9
+Vorgeschlagener SQL-Datentyp: DECIMAL(10,2)
+
+Attribut: Vertrags-Start
+--------------------------------------------------------------------------------
+Datensätze: 32
+Gefüllte Werte: 32
+Leere Werte: 0
+Eindeutige Werte: 31
+Wiederholte Einträge: 1
+Maximale Zeichenlänge: 13
+Vorgeschlagener SQL-Datentyp: DATE
+
+Attribut: Ist Aktiv
+--------------------------------------------------------------------------------
+Datensätze: 32
+Gefüllte Werte: 32
+Leere Werte: 0
+Eindeutige Werte: 6
+Wiederholte Einträge: 26
+Maximale Zeichenlänge: 5
+Vorgeschlagener SQL-Datentyp: BOOLEAN
+
+Attribut: Auftragsnummer
+--------------------------------------------------------------------------------
+Datensätze: 32
+Gefüllte Werte: 32
+Leere Werte: 0
+Eindeutige Werte: 32
+Wiederholte Einträge: 0
+Maximale Zeichenlänge: 7
+Vorgeschlagener SQL-Datentyp: VARCHAR(10)
+
+Attribut: Auftragsdatum
+--------------------------------------------------------------------------------
+Datensätze: 32
+Gefüllte Werte: 32
+Leere Werte: 0
+Eindeutige Werte: 32
+Wiederholte Einträge: 0
+Maximale Zeichenlänge: 10
+Vorgeschlagener SQL-Datentyp: DATE
+
+Attribut: Gesamtbetrag
+--------------------------------------------------------------------------------
+Datensätze: 32
+Gefüllte Werte: 32
+Leere Werte: 0
+Eindeutige Werte: 31
+Wiederholte Einträge: 1
+Maximale Zeichenlänge: 8
+Vorgeschlagener SQL-Datentyp: DECIMAL(10,2)
+
+Attribut: Rechnungsnummer
+--------------------------------------------------------------------------------
+Datensätze: 32
+Gefüllte Werte: 32
+Leere Werte: 0
+Eindeutige Werte: 32
+Wiederholte Einträge: 0
+Maximale Zeichenlänge: 7
+Vorgeschlagener SQL-Datentyp: VARCHAR(10)
+
+Attribut: Rechnungsdatum
+--------------------------------------------------------------------------------
+Datensätze: 32
+Gefüllte Werte: 32
+Leere Werte: 0
+Eindeutige Werte: 32
+Wiederholte Einträge: 0
+Maximale Zeichenlänge: 10
+Vorgeschlagener SQL-Datentyp: DATE
+
+Attribut: Rechnungsbetrag
+--------------------------------------------------------------------------------
+Datensätze: 32
+Gefüllte Werte: 32
+Leere Werte: 0
+Eindeutige Werte: 31
+Wiederholte Einträge: 1
+Maximale Zeichenlänge: 8
+Vorgeschlagener SQL-Datentyp: DECIMAL(10,2)
+
+Attribut: Vertragsnummer
+--------------------------------------------------------------------------------
+Datensätze: 32
+Gefüllte Werte: 32
+Leere Werte: 0
+Eindeutige Werte: 31
+Wiederholte Einträge: 1
+Maximale Zeichenlänge: 6
+Vorgeschlagener SQL-Datentyp: VARCHAR(10)
+
+Attribut: Vertragslaufzeitbeginn
+--------------------------------------------------------------------------------
+Datensätze: 32
+Gefüllte Werte: 32
+Leere Werte: 0
+Eindeutige Werte: 31
+Wiederholte Einträge: 1
+Maximale Zeichenlänge: 13
+Vorgeschlagener SQL-Datentyp: DATE
+
+Attribut: Vertragslaufzeitende
+--------------------------------------------------------------------------------
+Datensätze: 32
+Gefüllte Werte: 32
+Leere Werte: 0
+Eindeutige Werte: 31
+Wiederholte Einträge: 1
+Maximale Zeichenlänge: 10
+Vorgeschlagener SQL-Datentyp: DATE
+
+Attribut: Kategorien
+--------------------------------------------------------------------------------
+Datensätze: 32
+Gefüllte Werte: 32
+Leere Werte: 0
+Eindeutige Werte: 6
+Wiederholte Einträge: 26
+Maximale Zeichenlänge: 25
+Vorgeschlagener SQL-Datentyp: VARCHAR(50)
+
+Attribut: Branchen
+--------------------------------------------------------------------------------
+Datensätze: 32
+Gefüllte Werte: 32
+Leere Werte: 0
+Eindeutige Werte: 31
+Wiederholte Einträge: 1
+Maximale Zeichenlänge: 64
+Vorgeschlagener SQL-Datentyp: VARCHAR(100)
+
+Attribut: Rollen
+--------------------------------------------------------------------------------
+Datensätze: 32
+Gefüllte Werte: 32
+Leere Werte: 0
+Eindeutige Werte: 9
+Wiederholte Einträge: 23
+Maximale Zeichenlänge: 21
+Vorgeschlagener SQL-Datentyp: VARCHAR(50)
+
+Attribut: Betreuungsstatus
+--------------------------------------------------------------------------------
+Datensätze: 32
+Gefüllte Werte: 32
+Leere Werte: 0
+Eindeutige Werte: 3
+Wiederholte Einträge: 29
+Maximale Zeichenlänge: 8
+Vorgeschlagener SQL-Datentyp: VARCHAR(10)
+
+Attribut: Interne Notiz
+--------------------------------------------------------------------------------
+Datensätze: 32
+Gefüllte Werte: 32
+Leere Werte: 0
+Eindeutige Werte: 18
+Wiederholte Einträge: 14
+Maximale Zeichenlänge: 56
+Vorgeschlagener SQL-Datentyp: VARCHAR(100)
+
+MÖGLICHERWEISE NICHT ATOMARE WERTE
+================================================================================
+
+WARNUNG: Möglicher nicht atomarer Wert
+--------------------------------------------------------------------------------
+Spalte: Tel.
+CSV-Zeile: 13
+Wert: 07251 100012 / 0171 100012
+Erkanntes Trennzeichen: Schrägstrich
+Empfehlung: Auf Möglichkeit mehrerer Einzelwerte prüfen
+
+WARNUNG: Möglicher nicht atomarer Wert
+--------------------------------------------------------------------------------
+Spalte: E Mail
+CSV-Zeile: 17
+Wert: info@example.com | lena.maurer@example.com
+Erkanntes Trennzeichen: senkrechter Strich
+Empfehlung: Auf Möglichkeit mehrerer Einzelwerte prüfen
+
+WARNUNG: Möglicher nicht atomarer Wert
+--------------------------------------------------------------------------------
+Spalte: Tel.
+CSV-Zeile: 18
+Wert: 07251 100017 | 0172 100017
+Erkanntes Trennzeichen: senkrechter Strich
+Empfehlung: Auf Möglichkeit mehrerer Einzelwerte prüfen
+
+FEHLENDE ODER UNBEKANNTE INFORMATIONEN
+================================================================================
+
+WARNUNG: Fehlende oder unbekannte Information
+--------------------------------------------------------------------------------
+Spalte: E Mail
+CSV-Zeile: 12
+Wert: [LEER]
+Empfehlung: Wert vor dem Datenbankimport prüfen und gegebenenfalls durch NULL ersetzen
+
+WARNUNG: Fehlende oder unbekannte Information
+--------------------------------------------------------------------------------
+Spalte: Jahresumsatz
+CSV-Zeile: 13
+Wert: unbekannt
+Empfehlung: Wert vor dem Datenbankimport prüfen und gegebenenfalls durch NULL ersetzen
+
+WARNUNG: Fehlende oder unbekannte Information
+--------------------------------------------------------------------------------
+Spalte: Kunden-Nr.
+CSV-Zeile: 15
+Wert: [LEER]
+Empfehlung: Wert vor dem Datenbankimport prüfen und gegebenenfalls durch NULL ersetzen
+
+WARNUNG: Fehlende oder unbekannte Information
+--------------------------------------------------------------------------------
+Spalte: Vertrags-Start
+CSV-Zeile: 16
+Wert: nicht bekannt
+Empfehlung: Wert vor dem Datenbankimport prüfen und gegebenenfalls durch NULL ersetzen
+
+WARNUNG: Fehlende oder unbekannte Information
+--------------------------------------------------------------------------------
+Spalte: Vertragslaufzeitbeginn
+CSV-Zeile: 16
+Wert: nicht bekannt
+Empfehlung: Wert vor dem Datenbankimport prüfen und gegebenenfalls durch NULL ersetzen
+
+NICHT ZUGEORDNETE SPALTEN
+================================================================================
+
+WARNUNG: Keine bekannte Attributregel gefunden
+--------------------------------------------------------------------------------
+Quellspalte: Kategorien
+Normalisierter Name: kategorien
+Vorläufige Tabelle: nicht_zugeordnet
+Empfehlung: Prüfen und das Regelwerk bei Bedarf erweitern.
+
+WARNUNG: Keine bekannte Attributregel gefunden
+--------------------------------------------------------------------------------
+Quellspalte: Branchen
+Normalisierter Name: branchen
+Vorläufige Tabelle: nicht_zugeordnet
+Empfehlung: Prüfen und das Regelwerk bei Bedarf erweitern.
+
+WARNUNG: Keine bekannte Attributregel gefunden
+--------------------------------------------------------------------------------
+Quellspalte: Rollen
+Normalisierter Name: rollen
+Vorläufige Tabelle: nicht_zugeordnet
+Empfehlung: Prüfen und das Regelwerk bei Bedarf erweitern.
+
+WARNUNG: Keine bekannte Attributregel gefunden
+--------------------------------------------------------------------------------
+Quellspalte: Betreuungsstatus
+Normalisierter Name: betreuungsstatus
+Vorläufige Tabelle: nicht_zugeordnet
+Empfehlung: Prüfen und das Regelwerk bei Bedarf erweitern.
+
+WARNUNG: Keine bekannte Attributregel gefunden
+--------------------------------------------------------------------------------
+Quellspalte: Interne Notiz
+Normalisierter Name: internenotiz
+Vorläufige Tabelle: nicht_zugeordnet
+Empfehlung: Prüfen und das Regelwerk bei Bedarf erweitern.
+
+MÖGLICHE N:M-BEZIEHUNGEN
+================================================================================
+
+WARNUNG: Mögliche n:m-Beziehung erkannt
+--------------------------------------------------------------------------------
+Quellspalte: Kategorien
+CSV-Zeile: 3
+Wert: Lieferant / Bestandskunde
+Erkanntes Trennzeichen: Schrägstrich
+Mögliche Ausgangstabelle: kunde
+Mögliche Zieltabelle: kategorie
+Mögliche Verbindungstabelle: kunde_kategorie
+Empfehlung: Möglichkeit einer n:m-Beziehung und Verbindungstabelle manuell überprüfen.
+Hinweis: Die mögliche Beziehung wurde nicht
+automatisch in den Datenmodellvorschlag übernommen.
+
+WARNUNG: Mögliche n:m-Beziehung erkannt
+--------------------------------------------------------------------------------
+Quellspalte: Kategorien
+CSV-Zeile: 8
+Wert: Großkunde / Bestandskunde
+Erkanntes Trennzeichen: Schrägstrich
+Mögliche Ausgangstabelle: kunde
+Mögliche Zieltabelle: kategorie
+Mögliche Verbindungstabelle: kunde_kategorie
+Empfehlung: Möglichkeit einer n:m-Beziehung und Verbindungstabelle manuell überprüfen.
+Hinweis: Die mögliche Beziehung wurde nicht
+automatisch in den Datenmodellvorschlag übernommen.
+
+WARNUNG: Mögliche n:m-Beziehung erkannt
+--------------------------------------------------------------------------------
+Quellspalte: Kategorien
+CSV-Zeile: 23
+Wert: Großkunde / Bestandskunde
+Erkanntes Trennzeichen: Schrägstrich
+Mögliche Ausgangstabelle: kunde
+Mögliche Zieltabelle: kategorie
+Mögliche Verbindungstabelle: kunde_kategorie
+Empfehlung: Möglichkeit einer n:m-Beziehung und Verbindungstabelle manuell überprüfen.
+Hinweis: Die mögliche Beziehung wurde nicht
+automatisch in den Datenmodellvorschlag übernommen.
+
+WARNUNG: Mögliche n:m-Beziehung erkannt
+--------------------------------------------------------------------------------
+Quellspalte: Kategorien
+CSV-Zeile: 29
+Wert: Großkunde / Bestandskunde
+Erkanntes Trennzeichen: Schrägstrich
+Mögliche Ausgangstabelle: kunde
+Mögliche Zieltabelle: kategorie
+Mögliche Verbindungstabelle: kunde_kategorie
+Empfehlung: Möglichkeit einer n:m-Beziehung und Verbindungstabelle manuell überprüfen.
+Hinweis: Die mögliche Beziehung wurde nicht
+automatisch in den Datenmodellvorschlag übernommen.
+
+WARNUNG: Mögliche n:m-Beziehung erkannt
+--------------------------------------------------------------------------------
+Quellspalte: Branchen
+CSV-Zeile: 3
+Wert: Großhandel | Logistik
+Erkanntes Trennzeichen: senkrechter Strich
+Mögliche Ausgangstabelle: kunde
+Mögliche Zieltabelle: branche
+Mögliche Verbindungstabelle: kunde_branche
+Empfehlung: Möglichkeit einer n:m-Beziehung und Verbindungstabelle manuell überprüfen.
+Hinweis: Die mögliche Beziehung wurde nicht
+automatisch in den Datenmodellvorschlag übernommen.
+
+WARNUNG: Mögliche n:m-Beziehung erkannt
+--------------------------------------------------------------------------------
+Quellspalte: Branchen
+CSV-Zeile: 5
+Wert: Logistik / Transportwesen
+Erkanntes Trennzeichen: Schrägstrich
+Mögliche Ausgangstabelle: kunde
+Mögliche Zieltabelle: branche
+Mögliche Verbindungstabelle: kunde_branche
+Empfehlung: Möglichkeit einer n:m-Beziehung und Verbindungstabelle manuell überprüfen.
+Hinweis: Die mögliche Beziehung wurde nicht
+automatisch in den Datenmodellvorschlag übernommen.
+
+WARNUNG: Mögliche n:m-Beziehung erkannt
+--------------------------------------------------------------------------------
+Quellspalte: Branchen
+CSV-Zeile: 6
+Wert: Elektronik / Elektrotechnik
+Erkanntes Trennzeichen: Schrägstrich
+Mögliche Ausgangstabelle: kunde
+Mögliche Zieltabelle: branche
+Mögliche Verbindungstabelle: kunde_branche
+Empfehlung: Möglichkeit einer n:m-Beziehung und Verbindungstabelle manuell überprüfen.
+Hinweis: Die mögliche Beziehung wurde nicht
+automatisch in den Datenmodellvorschlag übernommen.
+
+WARNUNG: Mögliche n:m-Beziehung erkannt
+--------------------------------------------------------------------------------
+Quellspalte: Branchen
+CSV-Zeile: 7
+Wert: Bürobedarf / Großhandel
+Erkanntes Trennzeichen: Schrägstrich
+Mögliche Ausgangstabelle: kunde
+Mögliche Zieltabelle: branche
+Mögliche Verbindungstabelle: kunde_branche
+Empfehlung: Möglichkeit einer n:m-Beziehung und Verbindungstabelle manuell überprüfen.
+Hinweis: Die mögliche Beziehung wurde nicht
+automatisch in den Datenmodellvorschlag übernommen.
+
+WARNUNG: Mögliche n:m-Beziehung erkannt
+--------------------------------------------------------------------------------
+Quellspalte: Branchen
+CSV-Zeile: 8
+Wert: Maschinenbau / Metallindustrie
+Erkanntes Trennzeichen: Schrägstrich
+Mögliche Ausgangstabelle: kunde
+Mögliche Zieltabelle: branche
+Mögliche Verbindungstabelle: kunde_branche
+Empfehlung: Möglichkeit einer n:m-Beziehung und Verbindungstabelle manuell überprüfen.
+Hinweis: Die mögliche Beziehung wurde nicht
+automatisch in den Datenmodellvorschlag übernommen.
+
+WARNUNG: Mögliche n:m-Beziehung erkannt
+--------------------------------------------------------------------------------
+Quellspalte: Branchen
+CSV-Zeile: 10
+Wert: Baustoffhandel / Bauwirtschaft
+Erkanntes Trennzeichen: Schrägstrich
+Mögliche Ausgangstabelle: kunde
+Mögliche Zieltabelle: branche
+Mögliche Verbindungstabelle: kunde_branche
+Empfehlung: Möglichkeit einer n:m-Beziehung und Verbindungstabelle manuell überprüfen.
+Hinweis: Die mögliche Beziehung wurde nicht
+automatisch in den Datenmodellvorschlag übernommen.
+
+WARNUNG: Mögliche n:m-Beziehung erkannt
+--------------------------------------------------------------------------------
+Quellspalte: Branchen
+CSV-Zeile: 12
+Wert: Import / Großhandel
+Erkanntes Trennzeichen: Schrägstrich
+Mögliche Ausgangstabelle: kunde
+Mögliche Zieltabelle: branche
+Mögliche Verbindungstabelle: kunde_branche
+Empfehlung: Möglichkeit einer n:m-Beziehung und Verbindungstabelle manuell überprüfen.
+Hinweis: Die mögliche Beziehung wurde nicht
+automatisch in den Datenmodellvorschlag übernommen.
+
+WARNUNG: Mögliche n:m-Beziehung erkannt
+--------------------------------------------------------------------------------
+Quellspalte: Branchen
+CSV-Zeile: 15
+Wert: Möbelindustrie / Holzverarbeitung
+Erkanntes Trennzeichen: Schrägstrich
+Mögliche Ausgangstabelle: kunde
+Mögliche Zieltabelle: branche
+Mögliche Verbindungstabelle: kunde_branche
+Empfehlung: Möglichkeit einer n:m-Beziehung und Verbindungstabelle manuell überprüfen.
+Hinweis: Die mögliche Beziehung wurde nicht
+automatisch in den Datenmodellvorschlag übernommen.
+
+WARNUNG: Mögliche n:m-Beziehung erkannt
+--------------------------------------------------------------------------------
+Quellspalte: Branchen
+CSV-Zeile: 17
+Wert: Softwareentwicklung / IT-Dienstleistungen
+Erkanntes Trennzeichen: Schrägstrich
+Mögliche Ausgangstabelle: kunde
+Mögliche Zieltabelle: branche
+Mögliche Verbindungstabelle: kunde_branche
+Empfehlung: Möglichkeit einer n:m-Beziehung und Verbindungstabelle manuell überprüfen.
+Hinweis: Die mögliche Beziehung wurde nicht
+automatisch in den Datenmodellvorschlag übernommen.
+
+WARNUNG: Mögliche n:m-Beziehung erkannt
+--------------------------------------------------------------------------------
+Quellspalte: Branchen
+CSV-Zeile: 18
+Wert: Energiewirtschaft / Elektrotechnik
+Erkanntes Trennzeichen: Schrägstrich
+Mögliche Ausgangstabelle: kunde
+Mögliche Zieltabelle: branche
+Mögliche Verbindungstabelle: kunde_branche
+Empfehlung: Möglichkeit einer n:m-Beziehung und Verbindungstabelle manuell überprüfen.
+Hinweis: Die mögliche Beziehung wurde nicht
+automatisch in den Datenmodellvorschlag übernommen.
+
+WARNUNG: Mögliche n:m-Beziehung erkannt
+--------------------------------------------------------------------------------
+Quellspalte: Branchen
+CSV-Zeile: 19
+Wert: Medienwirtschaft / Marketing
+Erkanntes Trennzeichen: Schrägstrich
+Mögliche Ausgangstabelle: kunde
+Mögliche Zieltabelle: branche
+Mögliche Verbindungstabelle: kunde_branche
+Empfehlung: Möglichkeit einer n:m-Beziehung und Verbindungstabelle manuell überprüfen.
+Hinweis: Die mögliche Beziehung wurde nicht
+automatisch in den Datenmodellvorschlag übernommen.
+
+WARNUNG: Mögliche n:m-Beziehung erkannt
+--------------------------------------------------------------------------------
+Quellspalte: Branchen
+CSV-Zeile: 20
+Wert: Werkzeugbau / Metallindustrie
+Erkanntes Trennzeichen: Schrägstrich
+Mögliche Ausgangstabelle: kunde
+Mögliche Zieltabelle: branche
+Mögliche Verbindungstabelle: kunde_branche
+Empfehlung: Möglichkeit einer n:m-Beziehung und Verbindungstabelle manuell überprüfen.
+Hinweis: Die mögliche Beziehung wurde nicht
+automatisch in den Datenmodellvorschlag übernommen.
+
+WARNUNG: Mögliche n:m-Beziehung erkannt
+--------------------------------------------------------------------------------
+Quellspalte: Branchen
+CSV-Zeile: 21
+Wert: Gastronomie / Catering
+Erkanntes Trennzeichen: Schrägstrich
+Mögliche Ausgangstabelle: kunde
+Mögliche Zieltabelle: branche
+Mögliche Verbindungstabelle: kunde_branche
+Empfehlung: Möglichkeit einer n:m-Beziehung und Verbindungstabelle manuell überprüfen.
+Hinweis: Die mögliche Beziehung wurde nicht
+automatisch in den Datenmodellvorschlag übernommen.
+
+WARNUNG: Mögliche n:m-Beziehung erkannt
+--------------------------------------------------------------------------------
+Quellspalte: Branchen
+CSV-Zeile: 23
+Wert: Bauwirtschaft / Ingenieurwesen
+Erkanntes Trennzeichen: Schrägstrich
+Mögliche Ausgangstabelle: kunde
+Mögliche Zieltabelle: branche
+Mögliche Verbindungstabelle: kunde_branche
+Empfehlung: Möglichkeit einer n:m-Beziehung und Verbindungstabelle manuell überprüfen.
+Hinweis: Die mögliche Beziehung wurde nicht
+automatisch in den Datenmodellvorschlag übernommen.
+
+WARNUNG: Mögliche n:m-Beziehung erkannt
+--------------------------------------------------------------------------------
+Quellspalte: Branchen
+CSV-Zeile: 25
+Wert: IT-Dienstleistungen / Unternehmensberatung / Softwareentwicklung
+Erkanntes Trennzeichen: Schrägstrich
+Mögliche Ausgangstabelle: kunde
+Mögliche Zieltabelle: branche
+Mögliche Verbindungstabelle: kunde_branche
+Empfehlung: Möglichkeit einer n:m-Beziehung und Verbindungstabelle manuell überprüfen.
+Hinweis: Die mögliche Beziehung wurde nicht
+automatisch in den Datenmodellvorschlag übernommen.
+
+WARNUNG: Mögliche n:m-Beziehung erkannt
+--------------------------------------------------------------------------------
+Quellspalte: Branchen
+CSV-Zeile: 26
+Wert: Großhandel / Import
+Erkanntes Trennzeichen: Schrägstrich
+Mögliche Ausgangstabelle: kunde
+Mögliche Zieltabelle: branche
+Mögliche Verbindungstabelle: kunde_branche
+Empfehlung: Möglichkeit einer n:m-Beziehung und Verbindungstabelle manuell überprüfen.
+Hinweis: Die mögliche Beziehung wurde nicht
+automatisch in den Datenmodellvorschlag übernommen.
+
+WARNUNG: Mögliche n:m-Beziehung erkannt
+--------------------------------------------------------------------------------
+Quellspalte: Branchen
+CSV-Zeile: 28
+Wert: Versandhandel / Logistik
+Erkanntes Trennzeichen: Schrägstrich
+Mögliche Ausgangstabelle: kunde
+Mögliche Zieltabelle: branche
+Mögliche Verbindungstabelle: kunde_branche
+Empfehlung: Möglichkeit einer n:m-Beziehung und Verbindungstabelle manuell überprüfen.
+Hinweis: Die mögliche Beziehung wurde nicht
+automatisch in den Datenmodellvorschlag übernommen.
+
+WARNUNG: Mögliche n:m-Beziehung erkannt
+--------------------------------------------------------------------------------
+Quellspalte: Branchen
+CSV-Zeile: 29
+Wert: Pharmaindustrie / Forschung
+Erkanntes Trennzeichen: Schrägstrich
+Mögliche Ausgangstabelle: kunde
+Mögliche Zieltabelle: branche
+Mögliche Verbindungstabelle: kunde_branche
+Empfehlung: Möglichkeit einer n:m-Beziehung und Verbindungstabelle manuell überprüfen.
+Hinweis: Die mögliche Beziehung wurde nicht
+automatisch in den Datenmodellvorschlag übernommen.
+
+WARNUNG: Mögliche n:m-Beziehung erkannt
+--------------------------------------------------------------------------------
+Quellspalte: Branchen
+CSV-Zeile: 31
+Wert: Lebensmittelindustrie / Großhandel
+Erkanntes Trennzeichen: Schrägstrich
+Mögliche Ausgangstabelle: kunde
+Mögliche Zieltabelle: branche
+Mögliche Verbindungstabelle: kunde_branche
+Empfehlung: Möglichkeit einer n:m-Beziehung und Verbindungstabelle manuell überprüfen.
+Hinweis: Die mögliche Beziehung wurde nicht
+automatisch in den Datenmodellvorschlag übernommen.
+
+WARNUNG: Mögliche n:m-Beziehung erkannt
+--------------------------------------------------------------------------------
+Quellspalte: Branchen
+CSV-Zeile: 32
+Wert: Forschung / Softwareentwicklung / Elektrotechnik
+Erkanntes Trennzeichen: Schrägstrich
+Mögliche Ausgangstabelle: kunde
+Mögliche Zieltabelle: branche
+Mögliche Verbindungstabelle: kunde_branche
+Empfehlung: Möglichkeit einer n:m-Beziehung und Verbindungstabelle manuell überprüfen.
+Hinweis: Die mögliche Beziehung wurde nicht
+automatisch in den Datenmodellvorschlag übernommen.
+
+WARNUNG: Mögliche n:m-Beziehung erkannt
+--------------------------------------------------------------------------------
+Quellspalte: Branchen
+CSV-Zeile: 33
+Wert: Automobilindustrie / Fahrzeugbau
+Erkanntes Trennzeichen: Schrägstrich
+Mögliche Ausgangstabelle: kunde
+Mögliche Zieltabelle: branche
+Mögliche Verbindungstabelle: kunde_branche
+Empfehlung: Möglichkeit einer n:m-Beziehung und Verbindungstabelle manuell überprüfen.
+Hinweis: Die mögliche Beziehung wurde nicht
+automatisch in den Datenmodellvorschlag übernommen.
+
+WARNUNG: Mögliche n:m-Beziehung erkannt
+--------------------------------------------------------------------------------
+Quellspalte: Rollen
+CSV-Zeile: 3
+Wert: Einkauf / Verwaltung
+Erkanntes Trennzeichen: Schrägstrich
+Mögliche Ausgangstabelle: ansprechpartner
+Mögliche Zieltabelle: rolle
+Mögliche Verbindungstabelle: ansprechpartner_rolle
+Empfehlung: Möglichkeit einer n:m-Beziehung und Verbindungstabelle manuell überprüfen.
+Hinweis: Die mögliche Beziehung wurde nicht
+automatisch in den Datenmodellvorschlag übernommen.
+
+WARNUNG: Mögliche n:m-Beziehung erkannt
+--------------------------------------------------------------------------------
+Quellspalte: Rollen
+CSV-Zeile: 8
+Wert: Technik / Einkauf
+Erkanntes Trennzeichen: Schrägstrich
+Mögliche Ausgangstabelle: ansprechpartner
+Mögliche Zieltabelle: rolle
+Mögliche Verbindungstabelle: ansprechpartner_rolle
+Empfehlung: Möglichkeit einer n:m-Beziehung und Verbindungstabelle manuell überprüfen.
+Hinweis: Die mögliche Beziehung wurde nicht
+automatisch in den Datenmodellvorschlag übernommen.
+
+WARNUNG: Mögliche n:m-Beziehung erkannt
+--------------------------------------------------------------------------------
+Quellspalte: Rollen
+CSV-Zeile: 17
+Wert: Technik / Verwaltung
+Erkanntes Trennzeichen: Schrägstrich
+Mögliche Ausgangstabelle: ansprechpartner
+Mögliche Zieltabelle: rolle
+Mögliche Verbindungstabelle: ansprechpartner_rolle
+Empfehlung: Möglichkeit einer n:m-Beziehung und Verbindungstabelle manuell überprüfen.
+Hinweis: Die mögliche Beziehung wurde nicht
+automatisch in den Datenmodellvorschlag übernommen.
+
+WARNUNG: Mögliche n:m-Beziehung erkannt
+--------------------------------------------------------------------------------
+Quellspalte: Rollen
+CSV-Zeile: 19
+Wert: Vertrieb / Verwaltung
+Erkanntes Trennzeichen: Schrägstrich
+Mögliche Ausgangstabelle: ansprechpartner
+Mögliche Zieltabelle: rolle
+Mögliche Verbindungstabelle: ansprechpartner_rolle
+Empfehlung: Möglichkeit einer n:m-Beziehung und Verbindungstabelle manuell überprüfen.
+Hinweis: Die mögliche Beziehung wurde nicht
+automatisch in den Datenmodellvorschlag übernommen.
+
+WARNUNG: Mögliche n:m-Beziehung erkannt
+--------------------------------------------------------------------------------
+Quellspalte: Rollen
+CSV-Zeile: 23
+Wert: Technik / Einkauf
+Erkanntes Trennzeichen: Schrägstrich
+Mögliche Ausgangstabelle: ansprechpartner
+Mögliche Zieltabelle: rolle
+Mögliche Verbindungstabelle: ansprechpartner_rolle
+Empfehlung: Möglichkeit einer n:m-Beziehung und Verbindungstabelle manuell überprüfen.
+Hinweis: Die mögliche Beziehung wurde nicht
+automatisch in den Datenmodellvorschlag übernommen.
+
+WARNUNG: Mögliche n:m-Beziehung erkannt
+--------------------------------------------------------------------------------
+Quellspalte: Rollen
+CSV-Zeile: 25
+Wert: Technik / Verwaltung
+Erkanntes Trennzeichen: Schrägstrich
+Mögliche Ausgangstabelle: ansprechpartner
+Mögliche Zieltabelle: rolle
+Mögliche Verbindungstabelle: ansprechpartner_rolle
+Empfehlung: Möglichkeit einer n:m-Beziehung und Verbindungstabelle manuell überprüfen.
+Hinweis: Die mögliche Beziehung wurde nicht
+automatisch in den Datenmodellvorschlag übernommen.
+
+WARNUNG: Mögliche n:m-Beziehung erkannt
+--------------------------------------------------------------------------------
+Quellspalte: Rollen
+CSV-Zeile: 28
+Wert: Einkauf / Verwaltung
+Erkanntes Trennzeichen: Schrägstrich
+Mögliche Ausgangstabelle: ansprechpartner
+Mögliche Zieltabelle: rolle
+Mögliche Verbindungstabelle: ansprechpartner_rolle
+Empfehlung: Möglichkeit einer n:m-Beziehung und Verbindungstabelle manuell überprüfen.
+Hinweis: Die mögliche Beziehung wurde nicht
+automatisch in den Datenmodellvorschlag übernommen.
+
+WARNUNG: Mögliche n:m-Beziehung erkannt
+--------------------------------------------------------------------------------
+Quellspalte: Rollen
+CSV-Zeile: 29
+Wert: Technik / Einkauf
+Erkanntes Trennzeichen: Schrägstrich
+Mögliche Ausgangstabelle: ansprechpartner
+Mögliche Zieltabelle: rolle
+Mögliche Verbindungstabelle: ansprechpartner_rolle
+Empfehlung: Möglichkeit einer n:m-Beziehung und Verbindungstabelle manuell überprüfen.
+Hinweis: Die mögliche Beziehung wurde nicht
+automatisch in den Datenmodellvorschlag übernommen.
+
+WARNUNG: Mögliche n:m-Beziehung erkannt
+--------------------------------------------------------------------------------
+Quellspalte: Rollen
+CSV-Zeile: 32
+Wert: Technik / Verwaltung
+Erkanntes Trennzeichen: Schrägstrich
+Mögliche Ausgangstabelle: ansprechpartner
+Mögliche Zieltabelle: rolle
+Mögliche Verbindungstabelle: ansprechpartner_rolle
+Empfehlung: Möglichkeit einer n:m-Beziehung und Verbindungstabelle manuell überprüfen.
+Hinweis: Die mögliche Beziehung wurde nicht
+automatisch in den Datenmodellvorschlag übernommen.
+
+WARNUNG: Mögliche n:m-Beziehung erkannt
+--------------------------------------------------------------------------------
+Quellspalte: Rollen
+CSV-Zeile: 33
+Wert: Einkauf / Technik
+Erkanntes Trennzeichen: Schrägstrich
+Mögliche Ausgangstabelle: ansprechpartner
+Mögliche Zieltabelle: rolle
+Mögliche Verbindungstabelle: ansprechpartner_rolle
+Empfehlung: Möglichkeit einer n:m-Beziehung und Verbindungstabelle manuell überprüfen.
+Hinweis: Die mögliche Beziehung wurde nicht
+automatisch in den Datenmodellvorschlag übernommen.
+
+WARNUNGEN ZUM DATENMODELL
+================================================================================
+Keine Unstimmigkeiten zwischen Quelldaten und Datenmodellkonfiguration gefunden.
+
+ABSCHLIESSENDER HINWEIS
+================================================================================
+Alle automatisch erzeugten Zuordnungen, Beziehungen, Datentypen
+und Warnungen müssen vor einer Datenbankübernahme geprüft werden.

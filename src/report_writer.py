@@ -1,11 +1,22 @@
+from pathlib import Path
+
 def write_text_file(output_file_path, text_content):
     """
     Text in Datei schreiben
     Bereits vorhandene Datei überschreiben
     """
 
-    with open(output_file_path, mode='w', encoding='utf-8') as output_file:
+    output_path = Path(output_file_path)
+
+    # Erstelle bei Bedarf übergeordnetes Verzeichnis automatisch mit
+    # (allen nötigen Überverzeichnisse, und ohne Fehler bei bereits bestehendem Verzeichnis)
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+
+    with open(output_path, mode='w', encoding='utf-8') as output_file:
         output_file.write(text_content)
+
+        # Zeilenumbruch am Dateiende für eine saubere Git-Darstellung ergänzen
+        output_file.write('\n')
 
 def create_physical_model_text(physical_model):
     """
@@ -19,7 +30,7 @@ def create_physical_model_text(physical_model):
     output_lines.append('=' * 80)
     output_lines.append('')
     output_lines.append('Der Datenmodellvorschlag wurde automatisch aus der Datenanalyse')
-    output_lines.append('und der bereitgestellten Datenmodellkonfiguration erzeugt.')
+    output_lines.append('und der regelbasiert erzeugten Datenmodellkonfiguration erstellt.')
     output_lines.append('')
     output_lines.append('Tabellen, Attribute, Schlüssel, Beziehungen und Datentypen')
     output_lines.append('müssen vor einer praktischen Umsetzung geprüft werden.')
@@ -44,7 +55,7 @@ def create_physical_model_text(physical_model):
                 attribute_details = ', '.join(physical_attribute['properties'])
 
             if physical_attribute['references'] is not None:
-                attribute_details = (f"-> {physical_attribute['references']}")
+                attribute_details = f"-> {physical_attribute['references']}"
 
             output_lines.append(f"{physical_attribute['name']:<21} {physical_attribute['key_type']:<11} {physical_attribute['sql_data_type']:<17} {attribute_details}")
 
@@ -52,7 +63,12 @@ def create_physical_model_text(physical_model):
     output_lines.append('BEZIEHUNGEN')
     output_lines.append('=' * 80)
 
-    for relationship in physical_model['relationships']:
+    relationships = physical_model['relationships']
+
+    if len(relationships) == 0:
+        output_lines.append('Keine bekannten Beziehungen vorgeschlagen.')
+
+    for relationship in relationships:
         output_lines.append(f"{relationship['parent_table']}.id 1 <---- n {relationship['child_table']}.{relationship['foreign_key']}")
 
     output_lines.append('')
@@ -71,9 +87,11 @@ def create_analysis_report_text(
         column_analyses,
         quality_warnings,
         missing_information_warnings,
+        unrecognized_columns,
+        many_to_many_warnings,
         model_warnings):
     """
-    Textdarstellung der Datenanalyse und alle gefundenen Warnungen erzeugen
+    Textdarstellung der Datenanalyse mit allen gefundenen Warnungen erzeugen
     """
 
     output_lines = []
@@ -91,6 +109,8 @@ def create_analysis_report_text(
     output_lines.append('=' * 80)
     output_lines.append(f"Möglicherweise nicht atomare Werte: {len(quality_warnings)}")
     output_lines.append(f"Fehlende oder unbekannte Angaben: {len(missing_information_warnings)}")
+    output_lines.append(f"Nicht zugeordnete Spalten: {len(unrecognized_columns)}")
+    output_lines.append(f"Mögliche n:m-Beziehungen: {len(many_to_many_warnings)}")
     output_lines.append(f"Datenmodellwarnungen: {len(model_warnings)}")
     output_lines.append('')
 
@@ -105,7 +125,7 @@ def create_analysis_report_text(
         output_lines.append(f"Gefüllte Werte: {column_analysis['filled_value_count']}")
         output_lines.append(f"Leere Werte: {column_analysis['empty_value_count']}")
         output_lines.append(f"Eindeutige Werte: {column_analysis['unique_value_count']}")
-        output_lines.append(f"Mehrfachwerte: {column_analysis['duplicate_value_count']}")
+        output_lines.append(f"Wiederholte Einträge: {column_analysis['duplicate_value_count']}")
         output_lines.append(f"Maximale Zeichenlänge: {column_analysis['maximum_length']}")
         output_lines.append(f"Vorgeschlagener SQL-Datentyp: {column_analysis['suggested_sql_data_type']}")
 
@@ -113,13 +133,17 @@ def create_analysis_report_text(
 
     append_missing_information_warnings(output_lines, missing_information_warnings)
 
+    append_unrecognized_columns(output_lines, unrecognized_columns)
+
+    append_many_to_many_warnings(output_lines, many_to_many_warnings)
+
     append_model_warnings(output_lines, model_warnings)
 
     output_lines.append('')
     output_lines.append('ABSCHLIESSENDER HINWEIS')
     output_lines.append('=' * 80)
-    output_lines.append('Alle erkannten Probleme und erzeugten Vorschläge')
-    output_lines.append('müssen vor einer Datenbankübernahme geprüft werden.')
+    output_lines.append('Alle automatisch erzeugten Zuordnungen, Beziehungen, Datentypen')
+    output_lines.append('und Warnungen müssen vor einer Datenbankübernahme geprüft werden.')
 
     return '\n'.join(output_lines)
 
@@ -174,11 +198,11 @@ def append_model_warnings(output_lines, model_warnings):
     """
 
     output_lines.append('')
-    output_lines.append('DATENMODELLWARNUNGEN')
+    output_lines.append('WARNUNGEN ZUM DATENMODELL')
     output_lines.append('=' * 80)
 
     if len(model_warnings) == 0:
-        output_lines.append('Keine Auffälligkeiten gefunden.')
+        output_lines.append('Keine Unstimmigkeiten zwischen Quelldaten und Datenmodellkonfiguration gefunden.')
         return
 
     for model_warning in model_warnings:
@@ -189,3 +213,54 @@ def append_model_warnings(output_lines, model_warnings):
         output_lines.append(f"Quellspalte: {model_warning['source_column']}")
         output_lines.append(f"Zielattribut: {model_warning['target_name']}")
         output_lines.append(f"Empfehlung: {model_warning['recommendation']}")
+
+def append_many_to_many_warnings(output_lines, many_to_many_warnings):
+    """
+    Warnungen zu möglichen n:m-Beziehungen ergänzen
+    """
+
+    output_lines.append('')
+    output_lines.append('MÖGLICHE N:M-BEZIEHUNGEN')
+    output_lines.append('=' * 80)
+
+    if len(many_to_many_warnings) == 0:
+        output_lines.append('Keine möglichen n:m-Beziehungen gefunden.')
+        return
+
+    for many_to_many_warning in many_to_many_warnings:
+        output_lines.append('')
+        output_lines.append(f"WARNUNG: {many_to_many_warning['title']}")
+        output_lines.append('-' * 80)
+        output_lines.append(f"Quellspalte: {many_to_many_warning['source_column']}")
+        output_lines.append(f"CSV-Zeile: {many_to_many_warning['row_number']}")
+        output_lines.append(f"Wert: {many_to_many_warning['column_value']}")
+        output_lines.append(f"Erkanntes Trennzeichen: {many_to_many_warning['separator_name']}")
+        output_lines.append(f"Mögliche Ausgangstabelle: {many_to_many_warning['parent_table']}")
+        output_lines.append(f"Mögliche Zieltabelle: {many_to_many_warning['target_table']}")
+        output_lines.append(f"Mögliche Verbindungstabelle: {many_to_many_warning['connection_table']}")
+        output_lines.append(f"Empfehlung: {many_to_many_warning['recommendation']}")
+        output_lines.append('Hinweis: Die mögliche Beziehung wurde nicht')
+        output_lines.append('automatisch in den Datenmodellvorschlag übernommen.')
+
+def append_unrecognized_columns(output_lines, unrecognized_columns):
+    """
+    Hinweise zu Spalten ergänzen, die keiner bekannten
+    Tabellen- und Attributregel zugeordnet werden konnten
+    """
+
+    output_lines.append('')
+    output_lines.append('NICHT ZUGEORDNETE SPALTEN')
+    output_lines.append('=' * 80)
+
+    if len(unrecognized_columns) == 0:
+        output_lines.append('Alle Spalten konnten regelbasiert zugeordnet werden.')
+        return
+
+    for unrecognized_column in unrecognized_columns:
+        output_lines.append('')
+        output_lines.append('WARNUNG: Keine bekannte Attributregel gefunden')
+        output_lines.append('-' * 80)
+        output_lines.append(f"Quellspalte: {unrecognized_column['original_name']}")
+        output_lines.append(f"Normalisierter Name: {unrecognized_column['normalized_name']}")
+        output_lines.append('Vorläufige Tabelle: nicht_zugeordnet')
+        output_lines.append('Empfehlung: Prüfen und das Regelwerk bei Bedarf erweitern.')

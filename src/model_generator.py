@@ -13,12 +13,12 @@ def generate_physical_model(mapped_tables, model_config):
     for mapped_table in mapped_tables:
         physical_attributes = []
 
-        # Technischen Primärschlüssel für Entitätstabellen erzeugen und Attributsliste hinzufügen
+        # Technischen Primärschlüssel für Entitätstabellen erzeugen und der Attributliste hinzufügen
         if mapped_table['table_type'] == 'entity':
             primary_key_attribute = create_primary_key_attribute(default_primary_key)
             physical_attributes.append(primary_key_attribute)
 
-        # Attribute erzeugen und Attributsliste hinzufügen
+        # Attribute erzeugen und der Attributliste hinzufügen
         for mapped_attribute in mapped_table['attributes']:
             physical_attribute = create_physical_attribute(mapped_attribute)
             physical_attributes.append(physical_attribute)
@@ -28,7 +28,7 @@ def generate_physical_model(mapped_tables, model_config):
                 model_warning = create_missing_source_column_warning(mapped_table['name'], mapped_attribute)
                 model_warnings.append(model_warning)
 
-        # Tabellen erzeugen und Tabellenliste hinzufügen
+        # Tabelle erzeugen und der Tabellenliste hinzufügen
         physical_table = {
             'name': mapped_table['name'],
             'table_type': mapped_table['table_type'],
@@ -36,7 +36,7 @@ def generate_physical_model(mapped_tables, model_config):
         }
         physical_tables.append(physical_table)
 
-    # Fremdschlüssel aus Datenmodellkonfiguration Beziehungen ergänzen
+    # Fremdschlüssel aus den Beziehungen der Datenmodellkonfiguration ergänzen
     add_foreign_keys(physical_tables, model_config['relationships'], default_primary_key)
 
     physical_model = {
@@ -69,13 +69,13 @@ def create_primary_key_attribute(default_primary_key):
 
 def create_physical_attribute(mapped_attribute):
     """
-    Erstellung eines physischen Datenmodellattributs
-    aus entsprechendem CSV-Attribut
+    Physisches Datenmodellattribut aus dem
+    entsprechenden CSV-Attribut erstellen
     """
 
     key_type = ''
 
-    # Schlüsselkandidaten aus der Datenmodellkonfiguration Alternativschlüssel zur manuellen Prüfung zuweisen 'AK?'
+    # Schlüsselkandidaten für die manuelle Prüfung als mögliche Alternativschlüssel mit AK? kennzeichnen
     if mapped_attribute['key_candidate']:
         key_type = 'AK?'
 
@@ -96,10 +96,11 @@ def add_foreign_keys(physical_tables, relationships, default_primary_key):
     """
 
     for relationship in relationships:
+        parent_table = find_physical_table(physical_tables, relationship['parent_table'])
         child_table = find_physical_table(physical_tables, relationship['child_table'])
 
-        # Keiner Fremdschlüsselergänzung bei nicht gefundener Tabelle
-        if child_table is None:
+        # Fremdschlüssel nur ergänzen, wenn beide Tabellen vorhanden sind
+        if parent_table is None or child_table is None:
             continue
 
         foreign_key_attribute = {
@@ -107,7 +108,7 @@ def add_foreign_keys(physical_tables, relationships, default_primary_key):
             'key_type': 'FK',
             'sql_data_type': default_primary_key['data_type'],
             'properties': [],
-            'references': f"{relationship[f'parent_table']}.{default_primary_key['name']}"
+            'references': f"{relationship['parent_table']}.{default_primary_key['name']}"
         }
 
         child_table['attributes'].append(foreign_key_attribute)

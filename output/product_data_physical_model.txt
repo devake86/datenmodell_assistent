@@ -1,0 +1,34 @@
+================================================================================
+VORSCHLAG FÜR EIN PHYSISCHES DATENMODELL
+================================================================================
+
+Der Datenmodellvorschlag wurde automatisch aus der Datenanalyse
+und der regelbasiert erzeugten Datenmodellkonfiguration erstellt.
+
+Tabellen, Attribute, Schlüssel, Beziehungen und Datentypen
+müssen vor einer praktischen Umsetzung geprüft werden.
+
+SQL-Dialekt: mysql
+
+TABELLENÜBERSICHT
+================================================================================
+
+TABELLE: produkt
+--------------------------------------------------------------------------------
+Attribut              Schlüssel   Datentyp          Eigenschaft / Beziehung
+--------------------------------------------------------------------------------
+id                    PK          INT               AUTO_INCREMENT
+artikelnummer         AK?         VARCHAR(10)       -
+bezeichnung                       VARCHAR(20)       -
+preis                             DECIMAL(10,2)     -
+bestand                           INT               -
+
+BEZIEHUNGEN
+================================================================================
+Keine bekannten Beziehungen vorgeschlagen.
+
+LEGENDE
+================================================================================
+PK  = Primärschlüssel
+FK  = Fremdschlüssel
+AK? = möglicher Alternativschlüssel, manuell prüfen

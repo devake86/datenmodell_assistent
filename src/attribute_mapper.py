@@ -11,17 +11,17 @@ def map_column_analyses_to_tables(column_analyses, model_config):
         mapped_attributes = []
 
         for attribute_config in table_config['attributes']:
-            # Name der CSV-Spalte holen aus Datenmodellkonfiguration holen
+            # Namen der CSV-Spalte aus der Datenmodellkonfiguration holen
             source_column = attribute_config['source_column']
 
             # Passendes Dictionary im Analyseergebnis suchen
             column_analysis = find_column_analysis(column_analyses, source_column)
 
-            # Attribut Dictionaries erstellen und Liste hinzufügen
+            # Attribut-Dictionary erstellen und der Liste hinzufügen
             mapped_attribute = create_mapped_attribute(attribute_config, column_analysis)
             mapped_attributes.append(mapped_attribute)
 
-        # Table Dictionaries mit den entsprechenden Attribut Dictionaries erstellen und Liste hinzufügen
+        # Tabellen-Dictionary mit den zugehörigen Attribut-Dictionaries erstellen und der Liste hinzufügen
         mapped_table = {
             'name': table_config['name'],
             'table_type': table_config['table_type'],
@@ -45,10 +45,10 @@ def find_column_analysis(column_analyses, source_column):
 
 def create_mapped_attribute(attribute_config, column_analysis):
     """
-    Verbindung von Attributskonfiguration mit
-    entsprechender Analyse der CSV-Spalte
-    Vorherige Prüfung ob Spalte in der Datenmodellkonfiguration
-    auch in der CSV vorhanden ist, wenn nicht, dann Konfigurationsproblem
+    Attributkonfiguration mit der entsprechenden
+    Analyse der CSV-Spalte verbinden
+    Prüfen, ob die konfigurierte Quellspalte in der CSV-Datei
+    vorhanden ist und fehlende Spalten als Konfigurationsproblem behandeln
     """
 
     mapped_attribute = {

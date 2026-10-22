@@ -1,0 +1,265 @@
+{
+  "source": {
+    "file": "data\\customer_data_large.csv",
+    "delimiter": ";",
+    "encoding": "utf-8"
+  },
+  "database": {
+    "dialect": "mysql",
+    "default_primary_key": {
+      "name": "id",
+      "data_type": "INT",
+      "auto_increment": true
+    }
+  },
+  "tables": [
+    {
+      "name": "kunde",
+      "table_type": "entity",
+      "attributes": [
+        {
+          "source_column": "Kunden-Nr.",
+          "target_name": "kundennummer",
+          "key_candidate": true,
+          "assignment_status": "recognized"
+        },
+        {
+          "source_column": "Firma",
+          "target_name": "firmenname",
+          "key_candidate": false,
+          "assignment_status": "recognized"
+        },
+        {
+          "source_column": "Kunden-Typ",
+          "target_name": "kundentyp",
+          "key_candidate": false,
+          "assignment_status": "recognized"
+        },
+        {
+          "source_column": "Jahresumsatz",
+          "target_name": "umsatz",
+          "key_candidate": false,
+          "assignment_status": "recognized"
+        },
+        {
+          "source_column": "Vertrags-Start",
+          "target_name": "vertragsbeginn",
+          "key_candidate": false,
+          "assignment_status": "recognized"
+        },
+        {
+          "source_column": "Ist Aktiv",
+          "target_name": "aktiv",
+          "key_candidate": false,
+          "assignment_status": "recognized"
+        }
+      ]
+    },
+    {
+      "name": "ansprechpartner",
+      "table_type": "entity",
+      "attributes": [
+        {
+          "source_column": "Kontaktperson",
+          "target_name": "name",
+          "key_candidate": false,
+          "assignment_status": "recognized"
+        },
+        {
+          "source_column": "E Mail",
+          "target_name": "email",
+          "key_candidate": true,
+          "assignment_status": "recognized"
+        },
+        {
+          "source_column": "Tel.",
+          "target_name": "telefon",
+          "key_candidate": false,
+          "assignment_status": "recognized"
+        }
+      ]
+    },
+    {
+      "name": "adresse",
+      "table_type": "entity",
+      "attributes": [
+        {
+          "source_column": "Strasse",
+          "target_name": "strasse",
+          "key_candidate": false,
+          "assignment_status": "recognized"
+        },
+        {
+          "source_column": "Haus-Nr.",
+          "target_name": "hausnummer",
+          "key_candidate": false,
+          "assignment_status": "recognized"
+        },
+        {
+          "source_column": "Postleitzahl",
+          "target_name": "plz",
+          "key_candidate": false,
+          "assignment_status": "recognized"
+        },
+        {
+          "source_column": "Stadt",
+          "target_name": "ort",
+          "key_candidate": false,
+          "assignment_status": "recognized"
+        },
+        {
+          "source_column": "Land",
+          "target_name": "land",
+          "key_candidate": false,
+          "assignment_status": "recognized"
+        }
+      ]
+    },
+    {
+      "name": "auftrag",
+      "table_type": "entity",
+      "attributes": [
+        {
+          "source_column": "Auftragsnummer",
+          "target_name": "auftragsnummer",
+          "key_candidate": true,
+          "assignment_status": "recognized"
+        },
+        {
+          "source_column": "Auftragsdatum",
+          "target_name": "auftragsdatum",
+          "key_candidate": false,
+          "assignment_status": "recognized"
+        },
+        {
+          "source_column": "Gesamtbetrag",
+          "target_name": "gesamtbetrag",
+          "key_candidate": false,
+          "assignment_status": "recognized"
+        }
+      ]
+    },
+    {
+      "name": "rechnung",
+      "table_type": "entity",
+      "attributes": [
+        {
+          "source_column": "Rechnungsnummer",
+          "target_name": "rechnungsnummer",
+          "key_candidate": true,
+          "assignment_status": "recognized"
+        },
+        {
+          "source_column": "Rechnungsdatum",
+          "target_name": "rechnungsdatum",
+          "key_candidate": false,
+          "assignment_status": "recognized"
+        },
+        {
+          "source_column": "Rechnungsbetrag",
+          "target_name": "rechnungsbetrag",
+          "key_candidate": false,
+          "assignment_status": "recognized"
+        }
+      ]
+    },
+    {
+      "name": "vertrag",
+      "table_type": "entity",
+      "attributes": [
+        {
+          "source_column": "Vertragsnummer",
+          "target_name": "vertragsnummer",
+          "key_candidate": true,
+          "assignment_status": "recognized"
+        },
+        {
+          "source_column": "Vertragslaufzeitbeginn",
+          "target_name": "beginn",
+          "key_candidate": false,
+          "assignment_status": "recognized"
+        },
+        {
+          "source_column": "Vertragslaufzeitende",
+          "target_name": "ende",
+          "key_candidate": false,
+          "assignment_status": "recognized"
+        }
+      ]
+    },
+    {
+      "name": "nicht_zugeordnet",
+      "table_type": "review",
+      "attributes": [
+        {
+          "source_column": "Kategorien",
+          "target_name": "kategorien",
+          "key_candidate": false,
+          "assignment_status": "unrecognized"
+        },
+        {
+          "source_column": "Branchen",
+          "target_name": "branchen",
+          "key_candidate": false,
+          "assignment_status": "unrecognized"
+        },
+        {
+          "source_column": "Rollen",
+          "target_name": "rollen",
+          "key_candidate": false,
+          "assignment_status": "unrecognized"
+        },
+        {
+          "source_column": "Betreuungsstatus",
+          "target_name": "betreuungsstatus",
+          "key_candidate": false,
+          "assignment_status": "unrecognized"
+        },
+        {
+          "source_column": "Interne Notiz",
+          "target_name": "internenotiz",
+          "key_candidate": false,
+          "assignment_status": "unrecognized"
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "parent_table": "kunde",
+      "child_table": "ansprechpartner",
+      "foreign_key": "kunde_id",
+      "cardinality": "1:n"
+    },
+    {
+      "parent_table": "kunde",
+      "child_table": "adresse",
+      "foreign_key": "kunde_id",
+      "cardinality": "1:n"
+    },
+    {
+      "parent_table": "kunde",
+      "child_table": "auftrag",
+      "foreign_key": "kunde_id",
+      "cardinality": "1:n"
+    },
+    {
+      "parent_table": "kunde",
+      "child_table": "rechnung",
+      "foreign_key": "kunde_id",
+      "cardinality": "1:n"
+    },
+    {
+      "parent_table": "kunde",
+      "child_table": "vertrag",
+      "foreign_key": "kunde_id",
+      "cardinality": "1:n"
+    },
+    {
+      "parent_table": "auftrag",
+      "child_table": "rechnung",
+      "foreign_key": "auftrag_id",
+      "cardinality": "1:n"
+    }
+  ]
+}
