@@ -69,7 +69,7 @@ Aktueller regelbasierter Entwicklungsstand.
 
 ### v0.1-prototype
 
-Interner Prototyp mit statischer JSON-Datenmodellkonfiguration.
+Prototyp mit statischer JSON-Datenmodellkonfiguration.
 
 - **M7:** Konsolenausgabe zusammenfassen und Textberichte speichern
 - **M6:** Physischen Datenmodellvorschlag erzeugen
