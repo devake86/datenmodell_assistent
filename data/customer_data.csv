@@ -1,0 +1,16 @@
+Kundennummer;Firmenname;Kundentyp;Ansprechpartner;E-Mail;Telefon;Straße;Hausnummer;PLZ;Ort;Umsatz;Vertragsbeginn;Aktiv
+K-0001;Nordstern Technik GmbH;Kunde;Anna Berger;anna.berger@example.com;07251 100001;Industriestraße;12;76646;Bruchsal;12500.50;2024-02-15;Ja
+K-0002;Rheintal Handel KG;Lieferant;Markus Weber;markus.weber@example.com;07251 100002;Handelsweg;8;76669;Bad Schönborn;8400.00;2023-11-01;Ja
+K-0003;Sonnenblick Systeme GmbH;Kunde;Laura König;laura.koenig@example.com;07251 100003;Technikring;23;76131;Karlsruhe;19250.75;2022-07-20;Ja
+K-0004;Westwald Logistik AG;Kunde und Lieferant;Daniel Wolf;daniel.wolf@example.com;07251 100004;Güterstraße;4;69115;Heidelberg;31700.00;2021-05-12;Ja
+K-0005;Bergstrom Elektronik GmbH;Kunde;Miriam Schuster;miriam.schuster@example.com;07251 100005;Werkstraße;17;75172;Pforzheim;9650.25;2025-01-10;Ja
+K-0006;Mainufer Bürobedarf OHG;Lieferant;Tobias Klein;tobias.klein@example.com;07251 100006;Marktplatz;6;68159;Mannheim;7200.00;2024-09-01;Ja
+K-0007;Neckartal Maschinenbau GmbH;Kunde;Sarah Hartmann;sarah.hartmann@example.com;07251 100007;Maschinenweg;31;74072;Heilbronn;44800.10;2020-03-18;Ja
+K-0008;Kronenwerk Dienstleistungen;Kunde;Jonas Neumann;jonas.neumann@example.com;07251 100008;Kronenstraße;15;70173;Stuttgart;11350.00;2023-06-30;Nein
+K-0009;Felsenhain Baustoffe KG;Lieferant;Nina Vogel;nina.vogel@example.com;07251 100009;Steinweg;9;76437;Rastatt;15600.80;2022-10-05;Ja
+K-0010;Wiesenland Verpackungen GmbH;Kunde;Felix Braun;felix.braun@example.com;07251 100010;Wiesenstraße;42;76530;Baden-Baden;22900.00;2021-12-11;Ja
+K-0011;Hafenblick Import GmbH;Lieferant;Lea Fischer;;07251 100011;Hafenstraße;3;68159;Mannheim;18400.00;2024-04-22;Ja
+K-0012;Silberquell Beratung GmbH;Kunde;Paul Hoffmann;paul.hoffmann@example.com;07251 100012 / 0171 100012;Quellenweg;14;69168;Wiesloch;unbekannt;2025-02-01;Ja
+K-0003;Sonnenblick Systeme GMBH;Kunde;Laura König;laura.koenig@example.com;07251 100003;Technikring;23;76131;Karlsruhe;19250.75;2022-07-20;Ja
+;Eichenwald Möbelbau GmbH;Kunde;Sophie Keller;sophie.keller@example.com;07251 100014;Waldstraße;27;68789;Sankt Leon-Rot;13800.00;2023-08-14;Ja
+K-0015;Seebogen Kommunikation GmbH;Kunde;Tim Richter;tim.richter@example.com;07251 100015;Seestraße;11;68766;Hockenheim;10450.90;nicht bekannt;1

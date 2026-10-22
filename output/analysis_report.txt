@@ -1,0 +1,203 @@
+================================================================================
+DATENANALYSEBERICHT
+================================================================================
+
+Quelldatei: data/customer_data.csv
+Anzahl Datensätze: 15
+Anzahl Spalten: 13
+
+ZUSAMMENFASSUNG
+================================================================================
+Möglicherweise nicht atomare Werte: 1
+Fehlende oder unbekannte Angaben: 4
+Datenmodellwarnungen: 1
+
+DETAILANALYSE DER SPALTEN
+================================================================================
+
+Attribut: Kundennummer
+--------------------------------------------------------------------------------
+Datensätze: 15
+Gefüllte Werte: 14
+Leere Werte: 1
+Eindeutige Werte: 13
+Mehrfachwerte: 1
+Maximale Zeichenlänge: 6
+Vorgeschlagener SQL-Datentyp: VARCHAR(10)
+
+Attribut: Firmenname
+--------------------------------------------------------------------------------
+Datensätze: 15
+Gefüllte Werte: 15
+Leere Werte: 0
+Eindeutige Werte: 15
+Mehrfachwerte: 0
+Maximale Zeichenlänge: 28
+Vorgeschlagener SQL-Datentyp: VARCHAR(50)
+
+Attribut: Kundentyp
+--------------------------------------------------------------------------------
+Datensätze: 15
+Gefüllte Werte: 15
+Leere Werte: 0
+Eindeutige Werte: 3
+Mehrfachwerte: 12
+Maximale Zeichenlänge: 19
+Vorgeschlagener SQL-Datentyp: VARCHAR(20)
+
+Attribut: Ansprechpartner
+--------------------------------------------------------------------------------
+Datensätze: 15
+Gefüllte Werte: 15
+Leere Werte: 0
+Eindeutige Werte: 14
+Mehrfachwerte: 1
+Maximale Zeichenlänge: 15
+Vorgeschlagener SQL-Datentyp: VARCHAR(20)
+
+Attribut: E-Mail
+--------------------------------------------------------------------------------
+Datensätze: 15
+Gefüllte Werte: 14
+Leere Werte: 1
+Eindeutige Werte: 13
+Mehrfachwerte: 1
+Maximale Zeichenlänge: 27
+Vorgeschlagener SQL-Datentyp: VARCHAR(50)
+
+Attribut: Telefon
+--------------------------------------------------------------------------------
+Datensätze: 15
+Gefüllte Werte: 15
+Leere Werte: 0
+Eindeutige Werte: 14
+Mehrfachwerte: 1
+Maximale Zeichenlänge: 26
+Vorgeschlagener SQL-Datentyp: VARCHAR(50)
+
+Attribut: Straße
+--------------------------------------------------------------------------------
+Datensätze: 15
+Gefüllte Werte: 15
+Leere Werte: 0
+Eindeutige Werte: 14
+Mehrfachwerte: 1
+Maximale Zeichenlänge: 15
+Vorgeschlagener SQL-Datentyp: VARCHAR(20)
+
+Attribut: Hausnummer
+--------------------------------------------------------------------------------
+Datensätze: 15
+Gefüllte Werte: 15
+Leere Werte: 0
+Eindeutige Werte: 14
+Mehrfachwerte: 1
+Maximale Zeichenlänge: 2
+Vorgeschlagener SQL-Datentyp: VARCHAR(10)
+
+Attribut: PLZ
+--------------------------------------------------------------------------------
+Datensätze: 15
+Gefüllte Werte: 15
+Leere Werte: 0
+Eindeutige Werte: 13
+Mehrfachwerte: 2
+Maximale Zeichenlänge: 5
+Vorgeschlagener SQL-Datentyp: VARCHAR(10)
+
+Attribut: Ort
+--------------------------------------------------------------------------------
+Datensätze: 15
+Gefüllte Werte: 15
+Leere Werte: 0
+Eindeutige Werte: 13
+Mehrfachwerte: 2
+Maximale Zeichenlänge: 14
+Vorgeschlagener SQL-Datentyp: VARCHAR(20)
+
+Attribut: Umsatz
+--------------------------------------------------------------------------------
+Datensätze: 15
+Gefüllte Werte: 15
+Leere Werte: 0
+Eindeutige Werte: 14
+Mehrfachwerte: 1
+Maximale Zeichenlänge: 9
+Vorgeschlagener SQL-Datentyp: DECIMAL(10,2)
+
+Attribut: Vertragsbeginn
+--------------------------------------------------------------------------------
+Datensätze: 15
+Gefüllte Werte: 15
+Leere Werte: 0
+Eindeutige Werte: 14
+Mehrfachwerte: 1
+Maximale Zeichenlänge: 13
+Vorgeschlagener SQL-Datentyp: DATE
+
+Attribut: Aktiv
+--------------------------------------------------------------------------------
+Datensätze: 15
+Gefüllte Werte: 15
+Leere Werte: 0
+Eindeutige Werte: 3
+Mehrfachwerte: 12
+Maximale Zeichenlänge: 4
+Vorgeschlagener SQL-Datentyp: BOOLEAN
+
+MÖGLICHERWEISE NICHT ATOMARE WERTE
+================================================================================
+
+WARNUNG: Möglicher nicht atomarer Wert
+--------------------------------------------------------------------------------
+Spalte: Telefon
+CSV-Zeile: 13
+Wert: 07251 100012 / 0171 100012
+Erkanntes Trennzeichen: Schrägstrich
+Empfehlung: Auf Möglichkeit mehrerer Einzelwerte prüfen
+
+FEHLENDE ODER UNBEKANNTE INFORMATIONEN
+================================================================================
+
+WARNUNG: Fehlende oder unbekannte Information
+--------------------------------------------------------------------------------
+Spalte: E-Mail
+CSV-Zeile: 12
+Wert: [LEER]
+Empfehlung: Wert vor dem Datenbankimport prüfen und gegebenenfalls durch NULL ersetzen
+
+WARNUNG: Fehlende oder unbekannte Information
+--------------------------------------------------------------------------------
+Spalte: Umsatz
+CSV-Zeile: 13
+Wert: unbekannt
+Empfehlung: Wert vor dem Datenbankimport prüfen und gegebenenfalls durch NULL ersetzen
+
+WARNUNG: Fehlende oder unbekannte Information
+--------------------------------------------------------------------------------
+Spalte: Kundennummer
+CSV-Zeile: 15
+Wert: [LEER]
+Empfehlung: Wert vor dem Datenbankimport prüfen und gegebenenfalls durch NULL ersetzen
+
+WARNUNG: Fehlende oder unbekannte Information
+--------------------------------------------------------------------------------
+Spalte: Vertragsbeginn
+CSV-Zeile: 16
+Wert: nicht bekannt
+Empfehlung: Wert vor dem Datenbankimport prüfen und gegebenenfalls durch NULL ersetzen
+
+DATENMODELLWARNUNGEN
+================================================================================
+
+WARNUNG: Quellspalte aus der Datenmodellkonfiguration nicht gefunden
+--------------------------------------------------------------------------------
+Tabelle: ansprechpartner
+Quellspalte: Faxnummer
+Zielattribut: faxnummer
+Empfehlung: Spaltenname in CSV-Datei und Datenmodellkonfiguration prüfen
+
+ABSCHLIESSENDER HINWEIS
+================================================================================
+Alle erkannten Probleme und erzeugten Vorschläge
+müssen vor einer Datenbankübernahme geprüft werden.

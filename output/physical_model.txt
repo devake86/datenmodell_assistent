@@ -1,0 +1,59 @@
+================================================================================
+VORSCHLAG FÜR EIN PHYSISCHES DATENMODELL
+================================================================================
+
+Der Datenmodellvorschlag wurde automatisch aus der Datenanalyse
+und der bereitgestellten Datenmodellkonfiguration erzeugt.
+
+Tabellen, Attribute, Schlüssel, Beziehungen und Datentypen
+müssen vor einer praktischen Umsetzung geprüft werden.
+
+SQL-Dialekt: mysql
+
+TABELLENÜBERSICHT
+================================================================================
+
+TABELLE: kunde
+--------------------------------------------------------------------------------
+Attribut              Schlüssel   Datentyp          Eigenschaft / Beziehung
+--------------------------------------------------------------------------------
+id                    PK          INT               AUTO_INCREMENT
+kundennummer          AK?         VARCHAR(10)       -
+firmenname                        VARCHAR(50)       -
+kundentyp                         VARCHAR(20)       -
+umsatz                            DECIMAL(10,2)     -
+vertragsbeginn                    DATE              -
+aktiv                             BOOLEAN           -
+
+TABELLE: ansprechpartner
+--------------------------------------------------------------------------------
+Attribut              Schlüssel   Datentyp          Eigenschaft / Beziehung
+--------------------------------------------------------------------------------
+id                    PK          INT               AUTO_INCREMENT
+name                              VARCHAR(20)       -
+email                 AK?         VARCHAR(50)       -
+telefon                           VARCHAR(50)       -
+faxnummer                         UNBEKANNT         -
+kunde_id              FK          INT               -> kunde.id
+
+TABELLE: adresse
+--------------------------------------------------------------------------------
+Attribut              Schlüssel   Datentyp          Eigenschaft / Beziehung
+--------------------------------------------------------------------------------
+id                    PK          INT               AUTO_INCREMENT
+strasse                           VARCHAR(20)       -
+hausnummer                        VARCHAR(10)       -
+plz                               VARCHAR(10)       -
+ort                               VARCHAR(20)       -
+kunde_id              FK          INT               -> kunde.id
+
+BEZIEHUNGEN
+================================================================================
+kunde.id 1 <---- n ansprechpartner.kunde_id
+kunde.id 1 <---- n adresse.kunde_id
+
+LEGENDE
+================================================================================
+PK  = Primärschlüssel
+FK  = Fremdschlüssel
+AK? = möglicher Alternativschlüssel, manuell prüfen
